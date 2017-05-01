@@ -1,0 +1,9 @@
+ENV
+build
+dist
+Practica_3.egg-info
+.coverage
+*.pyc
+*.xml
+*.iml
+.vscode/
