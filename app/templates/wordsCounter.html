@@ -39,6 +39,20 @@
 function clearContents(element) {
   element.value = '';
 }
+
+$(document).ready(function() {
+$('#count').attr('disabled', true);
+$('#text').on('keyup',function() {
+    var textarea_value = $("#text").val();
+    if(textarea_value != '') {
+        $('#count').attr('disabled' , false);
+    }else{
+        $('#count').attr('disabled' , true);
+    }
+});
+
+});
+
 </script>
 
 </head>
@@ -59,7 +73,7 @@ function clearContents(element) {
 
  		 <div class="form-group">
     			<label for="text">Text</label>
-    			<textarea class="form-control" id="text" name="text" rows="3" maxlength="100"></textarea>
+    			<textarea class="form-control" id="text" name="text" rows="3" maxlength="100" ></textarea>
   		</div>
 	
 	<div class="input-group">
