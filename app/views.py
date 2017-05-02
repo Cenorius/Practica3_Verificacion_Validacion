@@ -15,7 +15,8 @@ def count():
     if form.validate():
         text=form.text.data
         temp=Practica.count(text)
-        for e in temp:
+
+        for e in reversed(temp):
             result+=str(e)+", "
     else:
         print form.text
