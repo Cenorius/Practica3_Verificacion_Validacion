@@ -3,6 +3,7 @@ nose==1.3.7
 stop-words
 selenium
 lettuce
+lettuce_webdriver
 flask
 flask-login
 flask-openid
