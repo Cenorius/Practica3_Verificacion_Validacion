@@ -33,7 +33,13 @@
 
 }
 
-</style>	
+</style>
+
+<script>
+function clearContents(element) {
+  element.value = '';
+}
+</script>
 
 </head>
 
@@ -49,25 +55,27 @@
 	
 	<h1></h1>
 	
-	 <form method="POST">
+	 <form action="/" method="POST" name="count">
 
-  <div class="form-group">
-    <label for="plot">Text</label>
-    <textarea class="form-control" id="plot" rows="3"></textarea>
-  </div>
+ 		 <div class="form-group">
+    			<label for="text">Text</label>
+    			<textarea class="form-control" id="text" name="text" rows="3" maxlength="100"></textarea>
+  		</div>
 	
-	<input id="count"type="submit" class="btn btn-primary" value="Count" /><br />
-  	<input id="reset"type="submit" class="btn btn-primary" value="Reset" /><br />
-
-	</form>
+	<div class="input-group">
+		<span class="input-group-btn">
+			<button type="button" id="reset" onclick="clearContents(text)" class="btn btn-primary">Reset</button>
+		</span>	
+		<input id="count"type="submit" class="btn btn-primary" value="Count"/><br />
 	</div>
-	<!--	
-	<nav class="navbar navbar-default navbar-fixed-bottom">
-		<div class="navbar-inner navbar-content-center">
-			<p class="text-center">&copy; Design by U-tad</p>
-		</div>
-	</nav>
-	//-->
+	</form>
+
+
+	{% if results %}
+		<label id="results" name="currentResult">Results: {{results}}<label>
+	{% endif %}
+
+	</div>
 </body>
 
 </html>

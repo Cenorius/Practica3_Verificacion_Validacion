@@ -1,1 +1,1 @@
-from .practica import *
+from .words_counter import *
