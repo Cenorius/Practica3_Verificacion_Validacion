@@ -1,19 +1,24 @@
 from flask import render_template
 from flask import Flask, request
 from app import app
-from text_form import text_form
+from .form import FormText
 import Practica
 
 @app.route('/' ,methods=['POST','GET'])
 def count():	
-    text=request.form.get('text')
+    #text=request.form.get('text')
+    form = FormText(request.form)   
     result=""
-    print request.form  
-    if(text is not None):
+
+    print form.errors
+
+    if form.validate():
+        text=form.text.data
         temp=Practica.count(text)
         for e in temp:
             result+=str(e)+", "
-    
+    else:
+        print form.text
     return render_template("wordsCounter.html", results=result)
 
     
