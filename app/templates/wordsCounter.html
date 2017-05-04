@@ -70,7 +70,7 @@ $('#text').on('keyup',function() {
 	<h1></h1>
 	
 	 <form action="/" method="POST" name="count">
-
+	 {{ form.hidden_tag() }}
  		 <div class="form-group">
     			<label for="text">Text</label>
     			<textarea class="form-control" id="text" name="text" rows="2" maxlength="100" ></textarea>

@@ -2,7 +2,7 @@ from flask import render_template
 from flask import Flask, request
 from app import app
 from .form import FormText
-import Practica
+import words_counter.words_counter
 
 @app.route('/' ,methods=['POST','GET'])
 def count():	
@@ -14,12 +14,12 @@ def count():
 
     if form.validate():
         text=form.text.data
-        temp=Practica.count(text)
+        temp=words_counter.count(text)
         result=reversed(temp)
         #for e in reversed(temp):
          #   result+=str(e)+", "
     else:
         print form.text
-    return render_template("wordsCounter.html", results=result)
+    return render_template("wordsCounter.html", results=result, form=form)
 
-    
+  
