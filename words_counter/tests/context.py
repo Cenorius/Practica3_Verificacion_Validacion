@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
 
-import Practica
+import words_counter
